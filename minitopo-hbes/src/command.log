@@ -1,0 +1,81 @@
+Client : ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+Router : arp -s 10.0.0.1 4e:1b:19:0c:31:b1
+Router : ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Client : arp -s 10.0.0.2 2e:21:fb:f4:76:a6
+Client : ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+Router : arp -s 10.0.1.1 1e:14:ff:d5:66:e7
+Router : ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Client : arp -s 10.0.1.2 96:f7:4e:44:34:fb
+Router : ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+Server : arp -s 10.1.0.2 a6:fa:61:fc:52:0b
+Server : ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+Router : arp -s 10.1.0.1 ba:52:26:a2:15:73
+Client : ip rule add from 10.0.0.1 table 1
+Client : ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+Client : ip route add default via 10.0.0.2 table 1
+Client : ip rule add from 10.0.1.1 table 2
+Client : ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+Client : ip route add default via 10.0.1.2 table 2
+Client : ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+Server : ip route add default via 10.1.0.2
+Not_NS : sysctl net.mptcp.mptcp_scheduler
+Not_NS : sysctl net.ipv4.tcp_congestion_control
+Not_NS : sysctl net.ipv4.tcp_autocorking
+Not_NS : sysctl net.ipv4.tcp_rmem
+Not_NS : sysctl net.ipv4.tcp_early_retrans
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf
+Not_NS : sysctl net.mptcp.mptcp_path_manager
+Not_NS : sysctl net.ipv4.tcp_wmem
+Client : sysctl net.mptcp.mptcp_path_manager
+Server : sysctl net.mptcp.mptcp_path_manager
+Not_NS : sysctl net.ipv4.tcp_early_retrans="3"
+Not_NS : sysctl net.ipv4.tcp_congestion_control="olia"
+Not_NS : sysctl net.ipv4.tcp_autocorking="1"
+Not_NS : sysctl net.ipv4.tcp_rmem="10240 87380 16777216"
+Not_NS : sysctl net.mptcp.mptcp_scheduler="default"
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf="1"
+Not_NS : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Not_NS : sysctl net.ipv4.tcp_wmem="4096 16384 4194304"
+Client : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Server : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Client : ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+Router : arp -s 10.0.0.1 4e:1b:19:0c:31:b1
+Router : ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Client : arp -s 10.0.0.2 2e:21:fb:f4:76:a6
+Client : ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+Router : arp -s 10.0.1.1 1e:14:ff:d5:66:e7
+Router : ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Client : arp -s 10.0.1.2 96:f7:4e:44:34:fb
+Router : ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+Server : arp -s 10.1.0.2 a6:fa:61:fc:52:0b
+Server : ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+Router : arp -s 10.1.0.1 ba:52:26:a2:15:73
+Client : ip rule add from 10.0.0.1 table 1
+Client : ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+Client : ip route add default via 10.0.0.2 table 1
+Client : ip rule add from 10.0.1.1 table 2
+Client : ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+Client : ip route add default via 10.0.1.2 table 2
+Client : ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+Server : ip route add default via 10.1.0.2
+s0 : ethtool -K s0-eth2 tso off
+Router : ethtool -K Router-eth0 tso off
+s1 : ethtool -K s1-eth2 tso off
+Router : ethtool -K Router-eth1 tso off
+Server : ethtool -K Server-eth0 tso off
+Router : ethtool -K Router-eth2 tso off
+Client : tcpdump -i any -s 65535 -w client.pcap &
+Server : tcpdump -i any -s 65535 -w server.pcap &
+Client : sleep 5
+Client : killall tcpdump
+Server : killall tcpdump
+Not_NS : sysctl net.ipv4.tcp_early_retrans="3"
+Not_NS : sysctl net.ipv4.tcp_congestion_control="cubic"
+Not_NS : sysctl net.ipv4.tcp_autocorking="1"
+Not_NS : sysctl net.ipv4.tcp_rmem="10240	87380	16777216"
+Not_NS : sysctl net.mptcp.mptcp_scheduler="default"
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf="1"
+Not_NS : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Not_NS : sysctl net.ipv4.tcp_wmem="10240	87380	16777216"
+Client : sysctl net.mptcp.mptcp_path_manager="stat /proc/sys/net/mptcp/mptcp_path_manager: No such file or directory"
+Server : sysctl net.mptcp.mptcp_path_manager="stat /proc/sys/net/mptcp/mptcp_path_manager: No such file or directory"
