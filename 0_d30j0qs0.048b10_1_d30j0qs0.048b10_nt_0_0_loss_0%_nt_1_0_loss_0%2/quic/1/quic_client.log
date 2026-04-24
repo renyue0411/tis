@@ -1,0 +1,27 @@
+2025/03/07 23:37:53 Mar  7 23:37:53.748677 zy: urlsSetting: [https://10.1.0.1:6121/random0 255 0 https://10.1.0.1:6121/randompre-1 1 0 https://10.1.0.1:6121/random1 255 0]
+2025/03/07 23:37:53 Mar  7 23:37:53.748881 Starting new connection to 10.1.0.1 ([::]:39307 -> 10.1.0.1:6121), connectionID b83bd03de82bf921, version 512
+2025/03/07 23:37:53 Mar  7 23:37:53.937767 Queueing packet 0x6 for later decryption
+2025/03/07 23:37:54 Mar  7 23:37:54.070235 frame.FinBit, Info for stream 5 of b83bd03de82bf921
+2025/03/07 23:37:54 Mar  7 23:37:54.070330 Path 3: sent 18 retrans 2 lost 0; rcv 27
+2025/03/07 23:37:54 Mar  7 23:37:54.070335 Path 0: sent 8 retrans 0 lost 0; rcv 9
+2025/03/07 23:37:54 Mar  7 23:37:54.070337 Path 1: sent 23 retrans 0 lost 0; rcv 40
+2025/03/07 23:37:54 Mar  7 23:37:54.086898 zypre2025-03-07 23:37:53.748741085 +0900 JST m=+0.000685996: 338.155857ms
+2025/03/07 23:37:54 Mar  7 23:37:54.087038 GET https://10.1.0.1:6121/randompre-1, priority 1
+2025/03/07 23:37:54 Mar  7 23:37:54.148467 frame.FinBit, Info for stream 7 of b83bd03de82bf921
+2025/03/07 23:37:54 Mar  7 23:37:54.148489 Path 0: sent 8 retrans 0 lost 0; rcv 9
+2025/03/07 23:37:54 Mar  7 23:37:54.148493 Path 1: sent 32 retrans 0 lost 0; rcv 51
+2025/03/07 23:37:54 Mar  7 23:37:54.148495 Path 3: sent 19 retrans 2 lost 0; rcv 27
+2025/03/07 23:37:54 Mar  7 23:37:54.148521 https://10.1.0.1:6121/randompre-1: 61.483241ms
+2025/03/07 23:37:54 Mar  7 23:37:54.148529 GET https://10.1.0.1:6121/random0, priority 255
+2025/03/07 23:37:54 Mar  7 23:37:54.148533 GET https://10.1.0.1:6121/random1, priority 255
+2025/03/07 23:38:00 Mar  7 23:38:00.207551 frame.FinBit, Info for stream 9 of b83bd03de82bf921
+2025/03/07 23:38:00 Mar  7 23:38:00.207575 Path 0: sent 8 retrans 0 lost 0; rcv 9
+2025/03/07 23:38:00 Mar  7 23:38:00.207578 Path 1: sent 1848 retrans 0 lost 0; rcv 3617
+2025/03/07 23:38:00 Mar  7 23:38:00.207580 Path 3: sent 2009 retrans 2 lost 0; rcv 3704
+2025/03/07 23:38:00 Mar  7 23:38:00.207591 https://10.1.0.1:6121/random1: 6.059054793s
+2025/03/07 23:38:00 Mar  7 23:38:00.511893 frame.FinBit, Info for stream 11 of b83bd03de82bf921
+2025/03/07 23:38:00 Mar  7 23:38:00.511926 Path 0: sent 8 retrans 0 lost 0; rcv 9
+2025/03/07 23:38:00 Mar  7 23:38:00.511932 Path 1: sent 1975 retrans 0 lost 0; rcv 3865
+2025/03/07 23:38:00 Mar  7 23:38:00.511935 Path 3: sent 2144 retrans 2 lost 0; rcv 3957
+2025/03/07 23:38:00 Mar  7 23:38:00.511951 https://10.1.0.1:6121/random0: 6.363404404s
+2025/03/07 23:38:00 Mar  7 23:38:00.511962 Completed all: 6.42492888s

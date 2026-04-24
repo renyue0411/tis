@@ -1,0 +1,27 @@
+2025/02/12 00:04:32 Feb 12 00:04:32.021138 zy: urlsSetting: [https://10.1.0.1:6121/random-low-big 50 0 https://10.1.0.1:6121/randompre-1 1 0 https://10.1.0.1:6121/random-high-small 255 0]
+2025/02/12 00:04:32 Feb 12 00:04:32.021393 Starting new connection to 10.1.0.1 ([::]:42065 -> 10.1.0.1:6121), connectionID a50cc42747fc32ab, version 512
+2025/02/12 00:04:32 Feb 12 00:04:32.057653 Queueing packet 0x6 for later decryption
+2025/02/12 00:04:32 Feb 12 00:04:32.099774 frame.FinBit, Info for stream 5 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.099864 Path 3: sent 27 retrans 2 lost 0; rcv 39
+2025/02/12 00:04:32 Feb 12 00:04:32.099869 Path 0: sent 7 retrans 0 lost 0; rcv 7
+2025/02/12 00:04:32 Feb 12 00:04:32.099872 Path 1: sent 17 retrans 0 lost 0; rcv 26
+2025/02/12 00:04:32 Feb 12 00:04:32.111574 zypre2025-02-12 00:04:32.021204893 +0900 JST m=+0.000776272: 90.368855ms
+2025/02/12 00:04:32 Feb 12 00:04:32.111600 GET https://10.1.0.1:6121/randompre-1, priority 1
+2025/02/12 00:04:32 Feb 12 00:04:32.122570 frame.FinBit, Info for stream 7 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.122585 Path 0: sent 7 retrans 0 lost 0; rcv 7
+2025/02/12 00:04:32 Feb 12 00:04:32.122588 Path 1: sent 20 retrans 0 lost 0; rcv 32
+2025/02/12 00:04:32 Feb 12 00:04:32.122590 Path 3: sent 32 retrans 2 lost 0; rcv 43
+2025/02/12 00:04:32 Feb 12 00:04:32.122616 https://10.1.0.1:6121/randompre-1: 11.015786ms
+2025/02/12 00:04:32 Feb 12 00:04:32.122623 GET https://10.1.0.1:6121/random-low-big, priority 50
+2025/02/12 00:04:32 Feb 12 00:04:32.122627 GET https://10.1.0.1:6121/random-high-small, priority 255
+2025/02/12 00:04:32 Feb 12 00:04:32.482706 frame.FinBit, Info for stream 9 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.482732 Path 3: sent 212 retrans 2 lost 0; rcv 374
+2025/02/12 00:04:32 Feb 12 00:04:32.482736 Path 0: sent 7 retrans 0 lost 0; rcv 7
+2025/02/12 00:04:32 Feb 12 00:04:32.482739 Path 1: sent 228 retrans 0 lost 0; rcv 364
+2025/02/12 00:04:32 Feb 12 00:04:32.484828 https://10.1.0.1:6121/random-high-small: 362.197189ms
+2025/02/12 00:04:36 Feb 12 00:04:36.568177 frame.FinBit, Info for stream 11 of a50cc42747fc32ab
+2025/02/12 00:04:36 Feb 12 00:04:36.568207 Path 3: sent 2109 retrans 2 lost 0; rcv 4079
+2025/02/12 00:04:36 Feb 12 00:04:36.568210 Path 0: sent 7 retrans 0 lost 0; rcv 7
+2025/02/12 00:04:36 Feb 12 00:04:36.568213 Path 1: sent 2239 retrans 0 lost 0; rcv 4124
+2025/02/12 00:04:36 Feb 12 00:04:36.571310 https://10.1.0.1:6121/random-low-big: 4.448674791s
+2025/02/12 00:04:36 Feb 12 00:04:36.571334 Completed all: 4.459735029s

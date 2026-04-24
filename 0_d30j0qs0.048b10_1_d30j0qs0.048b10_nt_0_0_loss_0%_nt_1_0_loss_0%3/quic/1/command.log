@@ -1,0 +1,120 @@
+Client : ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+Router : arp -s 10.0.0.1 7e:3d:53:15:d2:a3
+Router : ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Client : arp -s 10.0.0.2 62:18:53:55:3b:38
+Client : ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+Router : arp -s 10.0.1.1 52:7a:8b:d3:f7:c9
+Router : ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Client : arp -s 10.0.1.2 4e:e0:16:5d:a5:41
+Router : ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+Server : arp -s 10.1.0.2 22:02:3f:24:8e:78
+Server : ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+Router : arp -s 10.1.0.1 fa:4d:e6:a8:26:ba
+Client : ip rule add from 10.0.0.1 table 1
+Client : ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+Client : ip route add default via 10.0.0.2 table 1
+Client : ip rule add from 10.0.1.1 table 2
+Client : ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+Client : ip route add default via 10.0.1.2 table 2
+Client : ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+Server : ip route add default via 10.1.0.2
+Client : rm ping.log
+Client : ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+Client : ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+Not_NS : sysctl net.mptcp.mptcp_scheduler
+Not_NS : sysctl net.ipv4.tcp_congestion_control
+Not_NS : sysctl net.ipv4.tcp_autocorking
+Not_NS : sysctl net.ipv4.tcp_rmem
+Not_NS : sysctl net.ipv4.tcp_early_retrans
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf
+Not_NS : sysctl net.mptcp.mptcp_path_manager
+Not_NS : sysctl net.ipv4.tcp_wmem
+Client : sysctl net.mptcp.mptcp_path_manager
+Server : sysctl net.mptcp.mptcp_path_manager
+Not_NS : sysctl net.ipv4.tcp_early_retrans="3"
+Not_NS : sysctl net.ipv4.tcp_congestion_control="olia"
+Not_NS : sysctl net.ipv4.tcp_autocorking="1"
+Not_NS : sysctl net.ipv4.tcp_rmem="10240 87380 16777216"
+Not_NS : sysctl net.mptcp.mptcp_scheduler="default"
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf="1"
+Not_NS : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Not_NS : sysctl net.ipv4.tcp_wmem="4096 16384 4194304"
+Client : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Server : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Client : ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+Router : arp -s 10.0.0.1 7e:3d:53:15:d2:a3
+Router : ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Client : arp -s 10.0.0.2 62:18:53:55:3b:38
+Client : ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+Router : arp -s 10.0.1.1 52:7a:8b:d3:f7:c9
+Router : ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Client : arp -s 10.0.1.2 4e:e0:16:5d:a5:41
+Router : ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+Server : arp -s 10.1.0.2 22:02:3f:24:8e:78
+Server : ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+Router : arp -s 10.1.0.1 fa:4d:e6:a8:26:ba
+Client : ip rule add from 10.0.0.1 table 1
+Client : ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+Client : ip route add default via 10.0.0.2 table 1
+Client : ip rule add from 10.0.1.1 table 2
+Client : ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+Client : ip route add default via 10.0.1.2 table 2
+Client : ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+Server : ip route add default via 10.1.0.2
+s0 : ethtool -K s0-eth2 tso off
+Router : ethtool -K Router-eth0 tso off
+s1 : ethtool -K s1-eth2 tso off
+Router : ethtool -K Router-eth1 tso off
+Server : ethtool -K Server-eth0 tso off
+Router : ethtool -K Router-eth2 tso off
+Client : tcpdump -i any -s 100 -w client.pcap &
+Server : tcpdump -i any -s 100 -w server.pcap &
+Client : sleep 5
+s0 : sleep 0.1 && tc qdisc add dev s0-eth1 root handle 1:0 netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+s0 : sleep 0.1 && tc qdisc del dev s0-eth2 root  && tc qdisc add dev s0-eth2 root netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+Client : sleep 0.1 && tc qdisc add dev Client-eth0 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+Router : sleep 0.1 && tc qdisc del dev Router-eth0 root  && tc qdisc add dev Router-eth0 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+s1 : sleep 0.1 && tc qdisc add dev s1-eth1 root handle 1:0 netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+s1 : sleep 0.1 && tc qdisc del dev s1-eth2 root  && tc qdisc add dev s1-eth2 root netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+Client : sleep 0.1 && tc qdisc add dev Client-eth1 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+Router : sleep 0.1 && tc qdisc del dev Router-eth1 root  && tc qdisc add dev Router-eth1 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+Client : rm quic_client.log
+Server : rm quic_server.log
+Client : dd if=/dev/urandom of=random0 bs=100 count=50000
+Client : dd if=/dev/urandom of=randompre bs=100 count=500
+Client : dd if=/dev/urandom of=randompre-1 bs=100 count=5
+Client : dd if=/dev/urandom of=random1 bs=100 count=50000
+Client : ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+Client : ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+Server : /usr/local/go/bin/go build -a ~/go/src/github.com/lucas-clemente/quic-go/example/main.go
+Server : mv main server_main
+Server : /usr/local/go/bin/go build -a ~/go/src/github.com/lucas-clemente/quic-go/example/client_branch/main.go
+Server : netstat -sn > netstat_server_before
+Server : ./server_main  -www . -certpath ~/go/src/github.com/lucas-clemente/quic-go/example/ -bind 0.0.0.0:6121 &>quic_server.log &
+Client : sleep 2
+Client : netstat -sn > netstat_client_before
+Client : ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+Client : ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+Client : ./main -m https://10.1.0.1:6121/random0 255 0 https://10.1.0.1:6121/randompre-1 1 0 https://10.1.0.1:6121/random1 255 0 &>quic_client.log
+Server : netstat -sn > netstat_server_after
+Client : netstat -sn > netstat_client_after
+Client : ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+Client : ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+s1 : tc qdisc show >> ping.log
+Server : pkill -f ~/go/src/github.com/lucas-clemente/quic-go/example/main.go
+Client : sleep 2
+Client : rm -r /tmp/go-build*
+Client : rm cache_*
+Client : killall tcpdump
+Server : killall tcpdump
+Not_NS : sysctl net.ipv4.tcp_early_retrans="3"
+Not_NS : sysctl net.ipv4.tcp_congestion_control="olia"
+Not_NS : sysctl net.ipv4.tcp_autocorking="1"
+Not_NS : sysctl net.ipv4.tcp_rmem="10240	87380	16777216"
+Not_NS : sysctl net.mptcp.mptcp_scheduler="default"
+Not_NS : sysctl net.ipv4.tcp_moderate_rcvbuf="1"
+Not_NS : sysctl net.mptcp.mptcp_path_manager="fullmesh"
+Not_NS : sysctl net.ipv4.tcp_wmem="10240	87380	16777216"
+Client : sysctl net.mptcp.mptcp_path_manager="stat /proc/sys/net/mptcp/mptcp_path_manager: No such file or directory"
+Server : sysctl net.mptcp.mptcp_path_manager="stat /proc/sys/net/mptcp/mptcp_path_manager: No such file or directory"
+Client : rm random*

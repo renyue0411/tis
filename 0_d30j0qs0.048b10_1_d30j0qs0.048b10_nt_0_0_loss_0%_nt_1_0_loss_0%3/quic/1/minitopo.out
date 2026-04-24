@@ -1,0 +1,137 @@
+hey
+Create the param Object
+Create the param Object
+[<mpNetemAt.MpNetemAt instance at 0x7f9615499cd0>]
+[<mpNetemAt.MpNetemAt instance at 0x7f9615499d70>]
+{'changeNetem': 'yes', 'netemAt_0': '0,loss 0%', 'netemAt_1': '0,loss 0%', 'path_0': '30,0,10,10,0.0', 'path_1': '30,0,10,10,0.0', 'rightSubnet': '10.1.', 'topoType': 'MultiIf', 'leftSubnet': '10.0.'}
+Link id : 0
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+Link id : 1
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+Hello from topo multi if
+Simple multiple interface topolgy 
+|-----sw-----|
+c            r-----s
+|-----sw-----|
+
+Configure interfaces....Generic call ?
+Configure interfaces for multi inf
+ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Link id : 0
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Link id : 1
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+ip rule add from 10.0.0.1 table 1
+ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+ip route add default via 10.0.0.2 table 1
+ip rule add from 10.0.1.1 table 2
+ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+ip route add default via 10.0.1.2 table 2
+ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+ip route add default via 10.1.0.2
+{'file': 'random', 'earlyRetrans': '3', 'xpType': 'quic', 'schedc': 'default', 'kpms': 'fullmesh', 'snaplenPcap': '100', 'serverPcap': 'yes', 'congctrl': 'olia', 'rmem': '10240 87380 16777216', 'scheds': 'default', 'file_size': '20000', 'clientPcap': 'yes', 'kpmc': 'fullmesh', 'quicMultipath': '1'}
+ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+Configure interfaces....Generic call ?
+Configure interfaces for multi inf
+ifconfig Client-eth0 10.0.0.1 netmask 255.255.255.0
+ifconfig Router-eth0 10.0.0.2 netmask 255.255.255.0
+Link id : 0
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+ifconfig Client-eth1 10.0.1.1 netmask 255.255.255.0
+ifconfig Router-eth1 10.0.1.2 netmask 255.255.255.0
+Link id : 1
+	Delay : 30
+	Jitter :0
+	Queue Size : 10
+	Bandwidth : 10
+	Loss : 0.0
+	Back up : False
+	Netem... at 0.0(0.0) will be loss 0%
+
+ifconfig Router-eth2 10.1.0.2 netmask 255.255.255.0
+ifconfig Server-eth0 10.1.0.1 netmask 255.255.255.0
+ip rule add from 10.0.0.1 table 1
+ip route add 10.0.0.0/24 dev Client-eth0 scope link table 1
+ip route add default via 10.0.0.2 table 1
+ip rule add from 10.0.1.1 table 2
+ip route add 10.0.1.0/24 dev Client-eth1 scope link table 2
+ip route add default via 10.0.1.2 table 2
+ip route add default scope global nexthop via 10.0.0.2 dev Client-eth0
+ip route add default via 10.1.0.2
+s0 s0-eth2
+Router Router-eth0
+boxes s0 Router
+ethtool -K s0-eth2 tso off
+ethtool -K Router-eth0 tso off
+s1 s1-eth2
+Router Router-eth1
+boxes s1 Router
+ethtool -K s1-eth2 tso off
+ethtool -K Router-eth1 tso off
+ethtool -K Server-eth0 tso off
+ethtool -K Router-eth2 tso off
+Will change netem config on the fly
+s0 s0-eth2
+Router Router-eth0
+boxes s0 Router
+sleep 0.1 && tc qdisc add dev s0-eth1 root handle 1:0 netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc del dev s0-eth2 root  && tc qdisc add dev s0-eth2 root netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc add dev Client-eth0 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc del dev Router-eth0 root  && tc qdisc add dev Router-eth0 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+s1 s1-eth2
+Router Router-eth1
+boxes s1 Router
+sleep 0.1 && tc qdisc add dev s1-eth1 root handle 1:0 netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc del dev s1-eth2 root  && tc qdisc add dev s1-eth2 root netem loss 0% delay 30ms 0ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc add dev Client-eth1 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+sleep 0.1 && tc qdisc del dev Router-eth1 root  && tc qdisc add dev Router-eth1 root handle 1:0 tbf rate 10mbit burst 15000 latency 1ms && tc qdisc show >> ping.log
+ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+./server_main  -www . -certpath ~/go/src/github.com/lucas-clemente/quic-go/example/ -bind 0.0.0.0:6121 &>quic_server.log &
+ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+./main -m https://10.1.0.1:6121/random0 255 0 https://10.1.0.1:6121/randompre-1 1 0 https://10.1.0.1:6121/random1 255 0 &>quic_client.log
+ping -c 5 -I 10.0.0.1 10.1.0.1 >> ping.log
+ping -c 5 -I 10.0.1.1 10.1.0.1 >> ping.log
+tc qdisc show >> ping.log

@@ -1,0 +1,72 @@
+2025/03/07 23:37:53 Mar  7 23:37:53.781037 
+
+
+
+ Serving new connection: b83bd03de82bf921, version 512 from 10.0.0.1:39307
+2025/03/07 23:37:53 Mar  7 23:37:53.969849 GET 10.1.0.1:6121/randompre, on data stream 5, with weight 1, dependency 0
+2025/03/07 23:37:53 Mar  7 23:37:53.969891 upath = /randompre
+2025/03/07 23:37:53 Mar  7 23:37:53.972292 Responding with 200
+2025/03/07 23:37:54 Mar  7 23:37:54.037017 Stream 5, Weight 1, Content-Length: 50000
+2025/03/07 23:37:54 Mar  7 23:37:54.037065 Info for stream 5 of b83bd03de82bf921
+2025/03/07 23:37:54 Mar  7 23:37:54.037071 Path 0: sent 8 retrans 0 lost 0; rcv 8 rtt 61.727ms
+2025/03/07 23:37:54 Mar  7 23:37:54.037076 Path 1: sent 44 retrans 3 lost 0; rcv 10 rtt 61.525ms
+2025/03/07 23:37:54 Mar  7 23:37:54.037079 Path 3: sent 29 retrans 24 lost 0; rcv 11 rtt 61.539ms
+2025/03/07 23:37:54 Mar  7 23:37:54.117463 GET 10.1.0.1:6121/randompre-1, on data stream 7, with weight 1, dependency 0
+2025/03/07 23:37:54 Mar  7 23:37:54.117501 upath = /randompre-1
+2025/03/07 23:37:54 Mar  7 23:37:54.117536 Responding with 200
+2025/03/07 23:37:54 Mar  7 23:37:54.117617 Stream 7, Weight 1, Content-Length: 500
+2025/03/07 23:37:54 Mar  7 23:37:54.117637 Info for stream 7 of b83bd03de82bf921
+2025/03/07 23:37:54 Mar  7 23:37:54.117641 Path 0: sent 8 retrans 0 lost 0; rcv 8 rtt 64.887ms
+2025/03/07 23:37:54 Mar  7 23:37:54.117645 Path 1: sent 55 retrans 6 lost 3; rcv 29 rtt 62.307ms
+2025/03/07 23:37:54 Mar  7 23:37:54.117647 Path 3: sent 30 retrans 27 lost 3; rcv 19 rtt 64.887ms
+2025/03/07 23:37:54 Mar  7 23:37:54.179189 GET 10.1.0.1:6121/random1, on data stream 9, with weight 255, dependency 0
+2025/03/07 23:37:54 Mar  7 23:37:54.179225 GET 10.1.0.1:6121/random0, on data stream 11, with weight 255, dependency 0
+2025/03/07 23:37:54 Mar  7 23:37:54.179244 upath = /random0
+2025/03/07 23:37:54 Mar  7 23:37:54.179279 Responding with 200
+2025/03/07 23:37:54 Mar  7 23:37:54.179306 upath = /random1
+2025/03/07 23:37:54 Mar  7 23:37:54.179339 Responding with 200
+2025/03/07 23:37:54 Mar  7 23:37:54.393637 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:54 Mar  7 23:37:54.626177 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:54 Mar  7 23:37:54.809610 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:55 Mar  7 23:37:55.006695 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:55 Mar  7 23:37:55.211306 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:55 Mar  7 23:37:55.418020 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:55 Mar  7 23:37:55.619474 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:55 Mar  7 23:37:55.821758 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:56 Mar  7 23:37:56.027345 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:56 Mar  7 23:37:56.234497 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:56 Mar  7 23:37:56.435756 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:56 Mar  7 23:37:56.636270 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:56 Mar  7 23:37:56.845623 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:57 Mar  7 23:37:57.047008 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:57 Mar  7 23:37:57.246224 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:57 Mar  7 23:37:57.454997 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:57 Mar  7 23:37:57.656643 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:57 Mar  7 23:37:57.882218 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:58 Mar  7 23:37:58.081988 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:58 Mar  7 23:37:58.283815 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:58 Mar  7 23:37:58.490206 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:58 Mar  7 23:37:58.690919 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:58 Mar  7 23:37:58.892037 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:59 Mar  7 23:37:59.098090 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:59 Mar  7 23:37:59.299160 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:59 Mar  7 23:37:59.501468 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:59 Mar  7 23:37:59.705919 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:37:59 Mar  7 23:37:59.906607 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:38:00 Mar  7 23:38:00.107331 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:38:00 Mar  7 23:38:00.176739 Stream 9, Weight 255, Content-Length: 5000000
+2025/03/07 23:38:00 Mar  7 23:38:00.176771 Info for stream 9 of b83bd03de82bf921
+2025/03/07 23:38:00 Mar  7 23:38:00.176776 Path 0: sent 8 retrans 0 lost 0; rcv 8 rtt 66.884ms
+2025/03/07 23:38:00 Mar  7 23:38:00.176780 Path 1: sent 3643 retrans 28 lost 25; rcv 1824 rtt 60.745ms
+2025/03/07 23:38:00 Mar  7 23:38:00.176782 Path 3: sent 3718 retrans 38 lost 14; rcv 1983 rtt 61.011ms
+2025/03/07 23:38:00 Mar  7 23:38:00.315074 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:38:00 Mar  7 23:38:00.481456 Stream 11, Weight 255, Content-Length: 5000000
+2025/03/07 23:38:00 Mar  7 23:38:00.481658 Info for stream b of b83bd03de82bf921
+2025/03/07 23:38:00 Mar  7 23:38:00.481670 Path 3: sent 3971 retrans 38 lost 14; rcv 2116 rtt 60.848ms
+2025/03/07 23:38:00 Mar  7 23:38:00.481675 Path 0: sent 8 retrans 0 lost 0; rcv 8 rtt 66.884ms
+2025/03/07 23:38:00 Mar  7 23:38:00.481678 Path 1: sent 3891 retrans 28 lost 25; rcv 1950 rtt 60.867ms
+2025/03/07 23:38:01 Mar  7 23:38:01.267514 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:38:01 Mar  7 23:38:01.267575 Info for stream b of b83bd03de82bf921
+2025/03/07 23:38:01 Mar  7 23:38:01.267581 Path 0: sent 8 retrans 0 lost 0; rcv 8 rtt 66.884ms
+2025/03/07 23:38:01 Mar  7 23:38:01.267585 Path 1: sent 3893 retrans 29 lost 25; rcv 1975 rtt 60.923ms
+2025/03/07 23:38:01 Mar  7 23:38:01.267588 Path 3: sent 3977 retrans 42 lost 16; rcv 2144 rtt 60.895ms

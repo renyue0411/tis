@@ -1,0 +1,129 @@
+PING 10.1.0.1 (10.1.0.1) from 10.0.0.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=123 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=61.7 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=61.1 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.5 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=61.0 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 60.546/73.626/123.722/25.050 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.1.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=123 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=61.3 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.6 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.3 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 60.336/73.430/123.783/25.180 ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn 
+qdisc netem 1: dev s0-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc noqueue 0: dev s1-eth1 root refcnt 2 
+qdisc htb 5: dev s0-eth2 root refcnt 2 r2q 10 default 1 direct_packets_stat 0 direct_qlen 1000
+qdisc netem 10: dev s0-eth2 parent 5:1 limit 10 delay 30.0ms
+qdisc htb 5: dev s1-eth2 root refcnt 2 r2q 10 default 1 direct_packets_stat 0 direct_qlen 1000
+qdisc netem 10: dev s1-eth2 parent 5:1 limit 10 delay 30.0ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn 
+qdisc netem 1: dev s0-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc noqueue 0: dev s1-eth1 root refcnt 2 
+qdisc netem 8350: dev s0-eth2 root refcnt 2 limit 1000 delay 30.0ms
+qdisc htb 5: dev s1-eth2 root refcnt 2 r2q 10 default 1 direct_packets_stat 0 direct_qlen 1000
+qdisc netem 10: dev s1-eth2 parent 5:1 limit 10 delay 30.0ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc tbf 1: dev Client-eth0 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+qdisc noqueue 0: dev Client-eth1 root refcnt 2 
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc noqueue 0: dev Router-eth2 root refcnt 2 
+qdisc tbf 1: dev Router-eth0 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+qdisc htb 5: dev Router-eth1 root refcnt 2 r2q 10 default 1 direct_packets_stat 0 direct_qlen 1000
+qdisc netem 10: dev Router-eth1 parent 5:1 limit 10 delay 30.0ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn 
+qdisc netem 1: dev s0-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 1: dev s1-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 8350: dev s0-eth2 root refcnt 2 limit 1000 delay 30.0ms
+qdisc htb 5: dev s1-eth2 root refcnt 2 r2q 10 default 1 direct_packets_stat 0 direct_qlen 1000
+qdisc netem 10: dev s1-eth2 parent 5:1 limit 10 delay 30.0ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn 
+qdisc netem 1: dev s0-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 1: dev s1-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 8350: dev s0-eth2 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 8351: dev s1-eth2 root refcnt 2 limit 1000 delay 30.0ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc tbf 1: dev Client-eth0 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+qdisc tbf 1: dev Client-eth1 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc noqueue 0: dev Router-eth2 root refcnt 2 
+qdisc tbf 1: dev Router-eth0 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+qdisc tbf 1: dev Router-eth1 root refcnt 2 rate 10Mbit burst 15000b lat 1.0ms 
+PING 10.1.0.1 (10.1.0.1) from 10.0.0.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=60.9 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=60.6 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=61.2 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.5 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.1 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 60.180/60.733/61.268/0.400 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.1.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=61.2 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=61.2 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=60.9 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.7 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 60.792/61.041/61.235/0.315 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.0.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=60.6 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=60.7 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.7 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.8 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 60.652/60.815/61.049/0.342 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.1.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=60.9 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=61.2 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=60.6 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.7 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=61.1 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 60.654/60.949/61.238/0.317 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.0.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=60.8 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=60.8 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=60.8 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.4 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 60.471/60.837/61.043/0.292 ms
+PING 10.1.0.1 (10.1.0.1) from 10.0.1.1 : 56(84) bytes of data.
+64 bytes from 10.1.0.1: icmp_seq=1 ttl=63 time=60.9 ms
+64 bytes from 10.1.0.1: icmp_seq=2 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=3 ttl=63 time=60.5 ms
+64 bytes from 10.1.0.1: icmp_seq=4 ttl=63 time=61.0 ms
+64 bytes from 10.1.0.1: icmp_seq=5 ttl=63 time=60.7 ms
+
+--- 10.1.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 60.500/60.847/61.068/0.304 ms
+qdisc noqueue 0: dev lo root refcnt 2 
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn 
+qdisc netem 1: dev s0-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 1: dev s1-eth1 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 8350: dev s0-eth2 root refcnt 2 limit 1000 delay 30.0ms
+qdisc netem 8351: dev s1-eth2 root refcnt 2 limit 1000 delay 30.0ms

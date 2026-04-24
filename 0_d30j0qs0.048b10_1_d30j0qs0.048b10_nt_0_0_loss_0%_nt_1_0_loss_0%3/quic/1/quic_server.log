@@ -1,0 +1,71 @@
+2025/03/07 23:39:07 Mar  7 23:39:07.800510 
+
+
+
+ Serving new connection: 96d14796beda823a, version 512 from 10.0.0.1:45503
+2025/03/07 23:39:07 Mar  7 23:39:07.990838 GET 10.1.0.1:6121/randompre, on data stream 5, with weight 1, dependency 0
+2025/03/07 23:39:07 Mar  7 23:39:07.990990 upath = /randompre
+2025/03/07 23:39:07 Mar  7 23:39:07.993894 Responding with 200
+2025/03/07 23:39:08 Mar  7 23:39:08.058725 Stream 5, Weight 1, Content-Length: 50000
+2025/03/07 23:39:08 Mar  7 23:39:08.058885 Info for stream 5 of 96d14796beda823a
+2025/03/07 23:39:08 Mar  7 23:39:08.058894 Path 3: sent 29 retrans 8 lost 0; rcv 10 rtt 61.52ms
+2025/03/07 23:39:08 Mar  7 23:39:08.058900 Path 1: sent 44 retrans 20 lost 0; rcv 12 rtt 61.365ms
+2025/03/07 23:39:08 Mar  7 23:39:08.058902 Path 0: sent 8 retrans 0 lost 0; rcv 9 rtt 61.71ms
+2025/03/07 23:39:08 Mar  7 23:39:08.138685 GET 10.1.0.1:6121/randompre-1, on data stream 7, with weight 1, dependency 0
+2025/03/07 23:39:08 Mar  7 23:39:08.138736 upath = /randompre-1
+2025/03/07 23:39:08 Mar  7 23:39:08.138775 Responding with 200
+2025/03/07 23:39:08 Mar  7 23:39:08.138842 Stream 7, Weight 1, Content-Length: 500
+2025/03/07 23:39:08 Mar  7 23:39:08.138873 Info for stream 7 of 96d14796beda823a
+2025/03/07 23:39:08 Mar  7 23:39:08.138878 Path 0: sent 8 retrans 0 lost 0; rcv 9 rtt 65.7ms
+2025/03/07 23:39:08 Mar  7 23:39:08.138882 Path 3: sent 29 retrans 8 lost 0; rcv 15 rtt 65.7ms
+2025/03/07 23:39:08 Mar  7 23:39:08.138885 Path 1: sent 51 retrans 23 lost 3; rcv 29 rtt 62.457ms
+2025/03/07 23:39:08 Mar  7 23:39:08.199960 GET 10.1.0.1:6121/random1, on data stream 9, with weight 255, dependency 0
+2025/03/07 23:39:08 Mar  7 23:39:08.200000 GET 10.1.0.1:6121/random0, on data stream 11, with weight 255, dependency 0
+2025/03/07 23:39:08 Mar  7 23:39:08.200021 upath = /random0
+2025/03/07 23:39:08 Mar  7 23:39:08.200055 upath = /random1
+2025/03/07 23:39:08 Mar  7 23:39:08.200059 Responding with 200
+2025/03/07 23:39:08 Mar  7 23:39:08.200103 Responding with 200
+2025/03/07 23:39:08 Mar  7 23:39:08.436237 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:08 Mar  7 23:39:08.639240 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:08 Mar  7 23:39:08.847046 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:09 Mar  7 23:39:09.048206 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:09 Mar  7 23:39:09.252000 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:09 Mar  7 23:39:09.457477 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:09 Mar  7 23:39:09.656566 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:09 Mar  7 23:39:09.863463 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:10 Mar  7 23:39:10.064228 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:10 Mar  7 23:39:10.286739 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:10 Mar  7 23:39:10.474478 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:10 Mar  7 23:39:10.675383 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:10 Mar  7 23:39:10.900567 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:11 Mar  7 23:39:11.097113 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:11 Mar  7 23:39:11.298575 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:11 Mar  7 23:39:11.510089 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:11 Mar  7 23:39:11.711365 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:11 Mar  7 23:39:11.933457 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:12 Mar  7 23:39:12.124499 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:12 Mar  7 23:39:12.324752 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:12 Mar  7 23:39:12.454881 Stream 9, Weight 255, Content-Length: 5000000
+2025/03/07 23:39:12 Mar  7 23:39:12.454966 Info for stream 9 of 96d14796beda823a
+2025/03/07 23:39:12 Mar  7 23:39:12.454976 Path 0: sent 8 retrans 0 lost 0; rcv 9 rtt 67.457ms
+2025/03/07 23:39:12 Mar  7 23:39:12.454994 Path 3: sent 2440 retrans 22 lost 14; rcv 1308 rtt 60.711ms
+2025/03/07 23:39:12 Mar  7 23:39:12.454999 Path 1: sent 2414 retrans 45 lost 25; rcv 1215 rtt 60.813ms
+2025/03/07 23:39:12 Mar  7 23:39:12.543367 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:12 Mar  7 23:39:12.760658 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:12 Mar  7 23:39:12.968718 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:13 Mar  7 23:39:13.178092 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:13 Mar  7 23:39:13.370699 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:13 Mar  7 23:39:13.579256 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:13 Mar  7 23:39:13.779562 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:13 Mar  7 23:39:13.980257 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:14 Mar  7 23:39:14.190161 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:14 Mar  7 23:39:14.390967 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:14 Mar  7 23:39:14.619475 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:14 Mar  7 23:39:14.819685 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:15 Mar  7 23:39:15.046484 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/03/07 23:39:15 Mar  7 23:39:15.107908 Stream 11, Weight 255, Content-Length: 5000000
+2025/03/07 23:39:15 Mar  7 23:39:15.107982 Info for stream b of 96d14796beda823a
+2025/03/07 23:39:15 Mar  7 23:39:15.107994 Path 0: sent 8 retrans 0 lost 0; rcv 9 rtt 68.625ms
+2025/03/07 23:39:15 Mar  7 23:39:15.107998 Path 3: sent 3949 retrans 42 lost 34; rcv 2075 rtt 62.222ms
+2025/03/07 23:39:15 Mar  7 23:39:15.108001 Path 1: sent 3980 retrans 59 lost 39; rcv 2050 rtt 61.556ms
+2025/03/07 23:39:15 Mar  7 23:39:15.682618 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350

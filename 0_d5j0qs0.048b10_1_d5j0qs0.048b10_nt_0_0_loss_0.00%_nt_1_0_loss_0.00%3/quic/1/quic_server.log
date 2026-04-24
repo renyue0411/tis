@@ -1,0 +1,75 @@
+2025/02/12 00:04:32 Feb 12 00:04:32.027777 
+
+
+
+ Serving new connection: a50cc42747fc32ab, version 512 from 10.0.0.1:42065
+2025/02/12 00:04:32 Feb 12 00:04:32.064571 GET 10.1.0.1:6121/randompre, on data stream 5, with weight 1, dependency 0
+2025/02/12 00:04:32 Feb 12 00:04:32.064711 upath = /randompre
+2025/02/12 00:04:32 Feb 12 00:04:32.066938 Responding with 200
+2025/02/12 00:04:32 Feb 12 00:04:32.081347 Stream 5, Weight 1, Content-Length: 50000
+2025/02/12 00:04:32 Feb 12 00:04:32.081509 Info for stream 5 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.081518 Path 1: sent 27 retrans 3 lost 0; rcv 10 rtt 11.323ms
+2025/02/12 00:04:32 Feb 12 00:04:32.081534 Path 3: sent 42 retrans 23 lost 0; rcv 14 rtt 10.974ms
+2025/02/12 00:04:32 Feb 12 00:04:32.081538 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 11.8711ms
+2025/02/12 00:04:32 Feb 12 00:04:32.116823 GET 10.1.0.1:6121/randompre-1, on data stream 7, with weight 1, dependency 0
+2025/02/12 00:04:32 Feb 12 00:04:32.116864 upath = /randompre-1
+2025/02/12 00:04:32 Feb 12 00:04:32.116901 Responding with 200
+2025/02/12 00:04:32 Feb 12 00:04:32.116983 Stream 7, Weight 1, Content-Length: 500
+2025/02/12 00:04:32 Feb 12 00:04:32.117001 Info for stream 7 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.117006 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 18.48ms
+2025/02/12 00:04:32 Feb 12 00:04:32.117010 Path 1: sent 34 retrans 4 lost 1; rcv 19 rtt 15.161ms
+2025/02/12 00:04:32 Feb 12 00:04:32.117012 Path 3: sent 46 retrans 26 lost 3; rcv 31 rtt 17.657ms
+2025/02/12 00:04:32 Feb 12 00:04:32.128253 GET 10.1.0.1:6121/random-high-small, on data stream 9, with weight 255, dependency 0
+2025/02/12 00:04:32 Feb 12 00:04:32.128286 GET 10.1.0.1:6121/random-low-big, on data stream 11, with weight 50, dependency 0
+2025/02/12 00:04:32 Feb 12 00:04:32.128305 upath = /random-low-big
+2025/02/12 00:04:32 Feb 12 00:04:32.128337 Responding with 200
+2025/02/12 00:04:32 Feb 12 00:04:32.128354 upath = /random-high-small
+2025/02/12 00:04:32 Feb 12 00:04:32.128387 Responding with 200
+2025/02/12 00:04:32 Feb 12 00:04:32.466507 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:32 Feb 12 00:04:32.468857 Stream 9, Weight 255, Content-Length: 500000
+2025/02/12 00:04:32 Feb 12 00:04:32.468907 Info for stream 9 of a50cc42747fc32ab
+2025/02/12 00:04:32 Feb 12 00:04:32.468915 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:32 Feb 12 00:04:32.468920 Path 1: sent 393 retrans 28 lost 25; rcv 218 rtt 19.889ms
+2025/02/12 00:04:32 Feb 12 00:04:32.468922 Path 3: sent 399 retrans 48 lost 25; rcv 203 rtt 20.187ms
+2025/02/12 00:04:32 Feb 12 00:04:32.668381 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:32 Feb 12 00:04:32.869211 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:33 Feb 12 00:04:33.071787 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:33 Feb 12 00:04:33.272442 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:33 Feb 12 00:04:33.472730 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:33 Feb 12 00:04:33.673256 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:33 Feb 12 00:04:33.874919 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:34 Feb 12 00:04:34.074938 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:34 Feb 12 00:04:34.277883 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:34 Feb 12 00:04:34.476786 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:34 Feb 12 00:04:34.677408 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:34 Feb 12 00:04:34.878196 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:35 Feb 12 00:04:35.079532 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:35 Feb 12 00:04:35.278848 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:35 Feb 12 00:04:35.480928 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:35 Feb 12 00:04:35.682075 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:35 Feb 12 00:04:35.884039 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:36 Feb 12 00:04:36.086395 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:36 Feb 12 00:04:36.284770 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:36 Feb 12 00:04:36.485850 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:36 Feb 12 00:04:36.551458 Stream 11, Weight 50, Content-Length: 10000000
+2025/02/12 00:04:36 Feb 12 00:04:36.551488 Info for stream b of a50cc42747fc32ab
+2025/02/12 00:04:36 Feb 12 00:04:36.551493 Path 3: sent 4120 retrans 62 lost 39; rcv 2098 rtt 22.154ms
+2025/02/12 00:04:36 Feb 12 00:04:36.551497 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:36 Feb 12 00:04:36.551500 Path 1: sent 4166 retrans 42 lost 39; rcv 2229 rtt 22.177ms
+2025/02/12 00:04:36 Feb 12 00:04:36.700400 Info for stream b of a50cc42747fc32ab
+2025/02/12 00:04:36 Feb 12 00:04:36.700423 Path 3: sent 4126 retrans 64 lost 40; rcv 2110 rtt 20.986ms
+2025/02/12 00:04:36 Feb 12 00:04:36.700428 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:36 Feb 12 00:04:36.700431 Path 1: sent 4167 retrans 44 lost 40; rcv 2239 rtt 22.452ms
+2025/02/12 00:04:36 Feb 12 00:04:36.832113 Info for stream b of a50cc42747fc32ab
+2025/02/12 00:04:36 Feb 12 00:04:36.832139 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:36 Feb 12 00:04:36.832145 Path 1: sent 4167 retrans 44 lost 40; rcv 2239 rtt 22.452ms
+2025/02/12 00:04:36 Feb 12 00:04:36.832148 Path 3: sent 4127 retrans 65 lost 40; rcv 2110 rtt 20.986ms
+2025/02/12 00:04:37 Feb 12 00:04:37.032866 buffer.Len(1337)+sealer.Overhead(12) 1349 < 1350
+2025/02/12 00:04:37 Feb 12 00:04:37.033045 Info for stream b of a50cc42747fc32ab
+2025/02/12 00:04:37 Feb 12 00:04:37.033060 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:37 Feb 12 00:04:37.033079 Path 1: sent 4169 retrans 44 lost 40; rcv 2239 rtt 22.452ms
+2025/02/12 00:04:37 Feb 12 00:04:37.033084 Path 3: sent 4128 retrans 68 lost 43; rcv 2110 rtt 20.986ms
+2025/02/12 00:04:37 Feb 12 00:04:37.167247 Info for stream b of a50cc42747fc32ab
+2025/02/12 00:04:37 Feb 12 00:04:37.167378 Path 0: sent 6 retrans 0 lost 0; rcv 7 rtt 23.086ms
+2025/02/12 00:04:37 Feb 12 00:04:37.167400 Path 1: sent 4170 retrans 45 lost 40; rcv 2239 rtt 22.452ms
+2025/02/12 00:04:37 Feb 12 00:04:37.167421 Path 3: sent 4128 retrans 68 lost 43; rcv 2110 rtt 20.986ms
